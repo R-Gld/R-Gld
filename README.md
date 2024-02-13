@@ -1,13 +1,20 @@
-### Hi there 👋
+<h1 align="center">Hi there 👋</h1>
 
-## How to reach me 💬
-* [Mail](https://url.rgld.fr/send-mail)
-* [Discord](https://url.rgld.fr/add-discord)
-* [X (Twitter)](https://url.rgld.fr/x)
-* [Status Page](https://url.rgld.fr/status)
+<h2 align="center">How to reach me 💬</h2>
+
+<div align="center">
+	<a href="https://url.rgld.fr/send-mail">Mail</a>
+	<br>
+	<a href="https://url.rgld.fr/add-discord">Discord</a>
+	<br>
+	<a href="https://url.rgld.fr/x">X (Twitter)</a>
+	<br>
+	<a href="https://url.rgld.fr/status">Status Page</a>
+	<br>
+</div>
 
 
-## GitHub Stats
+<h2 align="center">GitHub Stats 🚀</h2>
 
 <div align="center">
 	<a href="https://github.com/R-Gld?tab=repositories"><img src="https://github-readme-stats.vercel.app/api?username=R-Gld&show_icons=true&theme=tokyonight"></a>
