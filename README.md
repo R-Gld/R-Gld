@@ -9,7 +9,7 @@
 <p>
   I'm currently in my third year of studies at the University of Marie and Louis Pasteur in Besançon, France (formerly known as Université de Franche-Comté).
   <br><br>
-  I’m doing an internship at <strong><a href="https://github.com/infomaniak">@Infomaniak</a></strong> in Geneva, Switzerland. I’m part of the <strong><a href="https://github.com/Infomaniak/desktop-kDrive">kDrive Desktop</a></strong> team, where I help develop the desktop synchronization applications for <strong>kDrive</strong>, Infomaniak’s secure and privacy-focused collaborative cloud storage service.
+  I’m doing an internship at <strong><a href="https://github.com/infomaniak">@Infomaniak</a></strong> in Geneva, Switzerland. I’m part of the <strong><a href="https://github.com/Infomaniak/desktop-kDrive">kDrive Desktop</a></strong> team, where I help develop the desktop synchronization applications for <strong><a href="https://www.infomaniak.com/fr/ksuite/kdrive">kDrive</a></strong>, Infomaniak’s secure and privacy-focused collaborative cloud storage service.
   <br><br>
   I’m deeply interested in the open-source philosophy and self-hosted services. I enjoy building and using tools that promote transparency, privacy, and user control.
   <br><br>
