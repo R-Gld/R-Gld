@@ -7,7 +7,7 @@
 <h2>👨‍🎓 About Me</h2>
 
 <p>
-  I'm currently in my third year of studies at the University of Marie and Louis Pasteur in Besançon, France (formerly known as Université de Franche-Comté).
+  I recently completed my Bachelor's degree in Computer Science at the University of Marie and Louis Pasteur in Besançon, France (formerly known as Université de Franche-Comté).
   <br><br>
   I’m doing an internship at <strong><a href="https://github.com/infomaniak">@Infomaniak</a></strong> in Geneva, Switzerland. I’m part of the <strong><a href="https://github.com/Infomaniak/desktop-kDrive">kDrive Desktop</a></strong> team, where I help develop the desktop synchronization applications for <strong><a href="https://www.infomaniak.com/fr/ksuite/kdrive">kDrive</a></strong>, Infomaniak’s secure and privacy-focused collaborative cloud storage service.
   <br><br>
@@ -19,11 +19,13 @@
 <h2 align="center">GitHub Stats 🚀</h2>
 
 <div align="center">
-	<a href="https://github.com/R-Gld?tab=repositories">
-    <img src="https://github-readme-stats.vercel.app/api?username=R-Gld&show_icons=true&theme=tokyonight">
+  <a href="https://github.com/R-Gld?tab=repositories">
+    <img src="https://github-readme-stats.vercel.app/api?username=R-Gld&show_icons=true&theme=tokyonight&hide=issues,contribs&show=prs_merged_percentage">
   </a>
-	<br><br>
-	<a href="https://github.com/R-Gld?tab=repositories">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=R-Gld&langs_count=8&theme=tokyonight">
+  <br><br>
+  <a href="https://github.com/R-Gld?tab=repositories">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=R-Gld&langs_count=20&layout=compact&theme=tokyonight">
   </a>
+  <br><br>
+  <img src="https://github-profile-trophy.vercel.app/?username=R-Gld&theme=tokyonight">
 </div>
