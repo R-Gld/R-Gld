@@ -11,7 +11,7 @@
   <br><br>
   I’m deeply interested in the open-source philosophy and self-hosted services. I enjoy building and using tools that promote transparency, privacy, and user control.
   <br><br>
-  My main programming languages are <strong>C++</strong> and <strong>C</strong>, but I also have some experience with <strong>Java</strong>, <strong>Python</strong>, <strong>Bash scripting</strong>, and <strong>system administration</strong>.
+  My main programming languages are <strong>C++</strong> and <strong>C</strong>, but I also have some experience with <strong>Java</strong>, <strong>Python</strong>, <strong>bash/ps1 scripting</strong>, and <strong>system administration</strong>.
 </p>
 
 <h2 align="center">GitHub Stats 🚀</h2>
