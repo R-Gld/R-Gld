@@ -24,6 +24,4 @@
   <a href="https://github.com/R-Gld?tab=repositories">
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=R-Gld&langs_count=20&layout=compact&theme=tokyonight">
   </a>
-  <br><br>
-  <img src="https://github-profile-trophy.vercel.app/?username=R-Gld&theme=tokyonight">
 </div>
