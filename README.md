@@ -19,27 +19,27 @@ I am now pursuing a Master's degree in <strong>Master informatique - Ingénierie
 
 <ul>
   <li>
-    <strong><a href="https://github.com/Infomaniak/desktop-kDrive">kDrive Desktop</a></strong> (C++) @ <a href="https://github.com/infomaniak">Infomaniak</a><br>
+    <strong><a href="https://github.com/Infomaniak/desktop-kDrive">kDrive Desktop</a></strong> (C++ 💻) @ <a href="https://github.com/infomaniak">Infomaniak</a><br>
     Desktop synchronization client for <strong><a href="https://www.infomaniak.com/fr/ksuite/kdrive">kDrive</a></strong>, Infomaniak's Swiss cloud storage service.
   </li>
   <li>
-    <strong><a href="https://github.com/R-Gld/Agile_Virtual_Machine">Agile Virtual Machine</a></strong> (Java)<br>
+    <strong><a href="https://github.com/R-Gld/Agile_Virtual_Machine">Agile Virtual Machine</a></strong> (Java ☕)<br>
     Agile virtual machine development project — compiler and interpreters
   </li>
   <li>
-    <strong><a href="https://github.com/R-Gld/Fraud">Fraud</a></strong> (Java)<br>
+    <strong><a href="https://github.com/R-Gld/Fraud">Fraud</a></strong> (Java ☕)<br>
     Give the possibility to a Minecraft owner/administrator to check if a player has some alts on the server
   </li>
   <li>
-    <strong><a href="https://github.com/R-Gld/RikaFirenetUnofficialApp">RikaFirenetUnofficialApp</a></strong> (Dart/Flutter)<br>
+    <strong><a href="https://github.com/R-Gld/RikaFirenetUnofficialApp">RikaFirenetUnofficialApp</a></strong> (Dart/Flutter 📱)<br>
     Unofficial Flutter app for remote control & monitoring of RIKA pellet/wood stoves via Firenet. Smart notifications, Android widget, multilingual
   </li>
   <li>
-    <strong><a href="https://github.com/R-Gld/bib_automaton">bib_automaton</a></strong> (C++)<br>
+    <strong><a href="https://github.com/R-Gld/bib_automaton">bib_automaton</a></strong> (C++ 💻)<br>
     Library for finite automaton manipulation - Language Theory project
   </li>
   <li>
-    <strong><a href="https://github.com/R-Gld/projet_UE_dev_mobile_tarot_africain">African Tarot Game</a></strong> (Dart/Flutter)<br>
+    <strong><a href="https://github.com/R-Gld/projet_UE_dev_mobile_tarot_africain">African Tarot Game</a></strong> (Dart/Flutter 📱)<br>
     Cross-platform African Tarot card game developed in Flutter with multi-level AI (Easy/Hard/Expert)
   </li>
 </ul>
