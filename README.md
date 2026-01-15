@@ -19,7 +19,7 @@ I am now pursuing a Master's degree in <strong>Master informatique - Ingénierie
 
 <ul>
   <li>
-    <strong><a href="https://github.com/Infomaniak/desktop-kDrive">kDrive Desktop</a></strong> (C++ 💻) @ <a href="https://github.com/infomaniak">Infomaniak</a><br>
+    <strong><a href="https://github.com/Infomaniak/desktop-kDrive">kDrive Desktop</a></strong> (C++ 💻)
     Desktop synchronization client for <strong><a href="https://www.infomaniak.com/fr/ksuite/kdrive">kDrive</a></strong>, Infomaniak's Swiss cloud storage service.
   </li>
   <li>
