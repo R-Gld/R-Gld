@@ -1,0 +1,59 @@
+name: Update profile stats
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/update-profile-stats.yml
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: update-profile-stats
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate GitHub stats cards
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Generate light stats card
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2
+        with:
+          card: stats
+          options: >-
+            username=${{ github.repository_owner }}&show_icons=true&hide=stars,issues&hide_rank=true&include_all_commits=true&show=reviews,prs_merged&hide_border=true&custom_title=Open%20Source%20Activity&theme=default
+          path: profile/stats-light.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          core_version: 2.1.5
+          fail_on_error: true
+
+      - name: Generate dark stats card
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2
+        with:
+          card: stats
+          options: >-
+            username=${{ github.repository_owner }}&show_icons=true&hide=stars,issues&hide_rank=true&include_all_commits=true&show=reviews,prs_merged&hide_border=true&custom_title=Open%20Source%20Activity&theme=github_dark
+          path: profile/stats-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          core_version: 2.1.5
+          fail_on_error: true
+
+      - name: Commit updated cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(profile): update GitHub stats"
+          git push
