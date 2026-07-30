@@ -1,0 +1,106 @@
+name: Update profile stats
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/update-profile-stats.yml
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: update-profile-stats
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate GitHub stats cards
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Generate light stats card
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2
+        with:
+          card: stats
+          options: >-
+            username=${{ github.repository_owner }}&show_icons=true&hide=stars,issues&hide_rank=true&include_all_commits=true&show=reviews,prs_merged&hide_border=true&custom_title=Open%20Source%20Activity&theme=default
+          path: profile/stats-light.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          core_version: 2.1.5
+          fail_on_error: true
+
+      - name: Generate dark stats card
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2
+        with:
+          card: stats
+          options: >-
+            username=${{ github.repository_owner }}&show_icons=true&hide=stars,issues&hide_rank=true&include_all_commits=true&show=reviews,prs_merged&hide_border=true&custom_title=Open%20Source%20Activity&theme=github_dark
+          path: profile/stats-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          core_version: 2.1.5
+          fail_on_error: true
+
+      - name: Upload generated cards
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: profile-stats
+          path: |
+            profile/stats-light.svg
+            profile/stats-dark.svg
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Publish GitHub stats cards
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out latest profile repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Download generated cards
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: profile-stats
+          path: profile
+
+      - name: Commit and push updated cards
+        env:
+          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/stats-light.svg profile/stats-dark.svg
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(profile): update GitHub stats"
+
+          for attempt in 1 2 3; do
+            git fetch origin "${TARGET_BRANCH}"
+            git rebase "origin/${TARGET_BRANCH}"
+
+            if git push origin "HEAD:${TARGET_BRANCH}"; then
+              exit 0
+            fi
+
+            echo "Push attempt ${attempt} failed; retrying."
+          done
+
+          echo "Unable to push updated cards after 3 attempts."
+          exit 1
