@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 10
 
     permissions:
-      contents: write
+      contents: read
 
     steps:
       - name: Check out profile repository
@@ -49,11 +49,58 @@ jobs:
           core_version: 2.1.5
           fail_on_error: true
 
-      - name: Commit updated cards
+      - name: Upload generated cards
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: profile-stats
+          path: |
+            profile/stats-light.svg
+            profile/stats-dark.svg
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Publish GitHub stats cards
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out latest profile repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Download generated cards
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: profile-stats
+          path: profile
+
+      - name: Commit and push updated cards
+        env:
+          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg
+          git add profile/stats-light.svg profile/stats-dark.svg
           git diff --cached --quiet && exit 0
           git commit -m "chore(profile): update GitHub stats"
-          git push
+
+          for attempt in 1 2 3; do
+            git fetch origin "${TARGET_BRANCH}"
+            git rebase "origin/${TARGET_BRANCH}"
+
+            if git push origin "HEAD:${TARGET_BRANCH}"; then
+              exit 0
+            fi
+
+            echo "Push attempt ${attempt} failed; retrying."
+          done
+
+          echo "Unable to push updated cards after 3 attempts."
+          exit 1
