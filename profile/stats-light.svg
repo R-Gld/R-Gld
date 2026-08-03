@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Open Source Activity, Rank: B+</title>
-        <desc id="descId">Total Commits  : 2726, Total PRs: 173, Total PRs Merged: 147, Total PRs Reviewed: 55, Contributed to (last year): 4</desc>
+        <desc id="descId">Total Commits  : 2726, Total PRs: 173, Total PRs Merged: 147, Total PRs Reviewed: 54, Contributed to (last year): 4</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 105.09989280942109;
+        stroke-dashoffset: 105.09989285512552;
       }
     }
   
@@ -196,7 +196,7 @@
         x="224.01"
         y="12.5"
         data-testid="reviews"
-      >55</text>
+      >54</text>
     </g>
   </g><g transform="translate(0, 100)">
     <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
