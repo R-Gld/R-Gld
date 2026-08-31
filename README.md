@@ -1,7 +1,7 @@
 <h1 align="center">Romain Galland</h1>
 
 <p align="center">
-  <strong>C++ Software · Desktop Applications · Open Source</strong>
+  <strong>Software Engineer · C++ · Desktop Applications · Open Source</strong>
 </p>
 
 <p align="center">
@@ -20,19 +20,16 @@
 
 ## About
 
-I'm a French software engineer focused on cross-platform desktop applications,
-systems programming, and open-source software.
+I'm a French developer focused on cross-platform desktop applications, systems
+programming, and open-source software.
 
-At [Infomaniak](https://github.com/Infomaniak), I contribute to
+At [Infomaniak](https://github.com/Infomaniak), I work as a Software Engineer on
 [kDrive Desktop](https://github.com/Infomaniak/desktop-kDrive), the synchronization
-client for Infomaniak's privacy-focused collaborative cloud. For the past several
-months, my main focus has been developing its Linux-specific interface redesign
-with Qt/QML, a project I will continue working on over the coming months.
-
-I'm currently completing the first year of a Master's degree in Systems and
-Software Engineering through a work-study program. Rather than continuing into
-the second year, I'll transition to a permanent role at Infomaniak in September
-2026.
+client for Infomaniak's privacy-focused collaborative cloud. My main focus is its
+Linux-specific interface redesign with Qt/QML, a project I will continue developing
+over the coming months. I also work on
+[Matomo SDK for Qt](https://github.com/Infomaniak/matomo-sdk-qt), Infomaniak's
+open-source Qt/C++ client for the Matomo Tracking API.
 
 I care about building reliable software that gives people transparency, privacy,
 and control over their data. I'm also interested in self-hosting, system
