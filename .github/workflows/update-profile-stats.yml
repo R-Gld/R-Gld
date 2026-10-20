@@ -32,7 +32,7 @@ jobs:
         with:
           card: stats
           options: >-
-            username=${{ github.repository_owner }}&show_icons=true&hide=stars,issues&hide_rank=true&include_all_commits=true&show=reviews,prs_merged&hide_border=true&custom_title=Open%20Source%20Activity&theme=default
+            username=${{ github.repository_owner }}&show_icons=true&hide=stars,issues,contribs&hide_rank=true&include_all_commits=true&show=prs_merged&hide_border=true&custom_title=Open%20Source%20Activity&theme=default
           path: profile/stats-light.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           core_version: 2.1.5
@@ -43,8 +43,30 @@ jobs:
         with:
           card: stats
           options: >-
-            username=${{ github.repository_owner }}&show_icons=true&hide=stars,issues&hide_rank=true&include_all_commits=true&show=reviews,prs_merged&hide_border=true&custom_title=Open%20Source%20Activity&theme=github_dark
+            username=${{ github.repository_owner }}&show_icons=true&hide=stars,issues,contribs&hide_rank=true&include_all_commits=true&show=prs_merged&hide_border=true&custom_title=Open%20Source%20Activity&theme=github_dark
           path: profile/stats-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          core_version: 2.1.5
+          fail_on_error: true
+
+      - name: Generate light languages card
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2
+        with:
+          card: top-langs
+          options: >-
+            username=${{ github.repository_owner }}&layout=compact&langs_count=6&card_width=300&hide=tex&hide_border=true&custom_title=Most%20Used%20Languages&theme=default
+          path: profile/top-langs-light.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          core_version: 2.1.5
+          fail_on_error: true
+
+      - name: Generate dark languages card
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2
+        with:
+          card: top-langs
+          options: >-
+            username=${{ github.repository_owner }}&layout=compact&langs_count=6&card_width=300&hide=tex&hide_border=true&custom_title=Most%20Used%20Languages&theme=github_dark
+          path: profile/top-langs-dark.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           core_version: 2.1.5
           fail_on_error: true
@@ -56,11 +78,14 @@ jobs:
           path: |
             profile/stats-light.svg
             profile/stats-dark.svg
+            profile/top-langs-light.svg
+            profile/top-langs-dark.svg
           if-no-files-found: error
           retention-days: 1
 
   publish:
     name: Publish GitHub stats cards
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     needs: generate
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -87,7 +112,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/stats-light.svg profile/stats-dark.svg
+          git add profile/stats-light.svg profile/stats-dark.svg profile/top-langs-light.svg profile/top-langs-dark.svg
           git diff --cached --quiet && exit 0
           git commit -m "chore(profile): update GitHub stats"
 
