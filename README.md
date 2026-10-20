@@ -71,8 +71,24 @@ administration, and developer tooling.
       srcset="./profile/stats-light.svg"
     >
     <img
+      align="top"
       src="./profile/stats-light.svg"
-      alt="Romain Galland's GitHub activity"
+      alt="Romain Galland's all-time GitHub commits, pull requests, and merged pull requests"
+    >
+  </picture>
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="./profile/top-langs-dark.svg"
+    >
+    <source
+      media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+      srcset="./profile/top-langs-light.svg"
+    >
+    <img
+      align="top"
+      src="./profile/top-langs-light.svg"
+      alt="Romain Galland's most used languages across public repositories"
     >
   </picture>
 </p>
