@@ -71,6 +71,7 @@ administration, and developer tooling.
       srcset="./profile/stats-light.svg"
     >
     <img
+      align="top"
       src="./profile/stats-light.svg"
       alt="Romain Galland's all-time GitHub commits, pull requests, and merged pull requests"
     >
@@ -85,6 +86,7 @@ administration, and developer tooling.
       srcset="./profile/top-langs-light.svg"
     >
     <img
+      align="top"
       src="./profile/top-langs-light.svg"
       alt="Romain Galland's most used languages across public repositories"
     >
